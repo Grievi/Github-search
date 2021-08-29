@@ -1,0 +1,21 @@
+ul li a{
+    text-align: center;
+}
+.container-fluid .git {
+    border: 1px solid black;
+    border-radius: 18px 18px 18px;
+   background:linear-gradient(#61606E,#1D212A,#2B2A2F,#A0A1A5) ;
+}
+.container-fluid .git a{
+    color: white;
+    font-weight: 300;
+}
+.nav-link:hover{
+    /* background:linear-gradient(#61606E,#1D212A,#2B2A2F,#A0A1A5); */
+    text-transform: uppercase;
+    font-weight: 500;
+    color: white;
+    border: 1px solid black;
+    border-radius: 18px 18px 18px;
+}
+

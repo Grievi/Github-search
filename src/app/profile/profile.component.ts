@@ -11,6 +11,7 @@ import { User} from '../user/user';
 export class ProfileComponent implements OnInit {
 
   user!:User;
+  repos: any;
   constructor( ProfileService:ProfileService, private http:HttpClient) { }
 
   ngOnInit(): void {

@@ -8,7 +8,7 @@ import { User} from '../user/user';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css'],
 })
-export class UserComponent implements OnInit {
+export class ProfileComponent implements OnInit {
 
   user!:User;
   repos:any;

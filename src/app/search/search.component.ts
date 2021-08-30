@@ -1,6 +1,4 @@
-import { EventEmitter } from 'stream';
-import { Component, OnInit } from '@angular/core';
-import { EventEmitter } from '@angular/core';
+import { Component, OnInit, Output ,EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-search',
@@ -9,12 +7,12 @@ import { EventEmitter } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  @Output searchUser()=new EventEmitter<any>();
+  @Output getUser()= new EventEmitter<any>();
   public userQuery!:string;
 
   constructor() { }
 
-  searchUser(){
+  getUser(){
     this.searchResult.emit(this.userQuery);
   }
 

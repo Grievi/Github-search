@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { ProfileComponent } from './profile/profile.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SearchComponent } from './search/search.component';
+import { FormsModule} from '@angular/forms';
+import { ProfileService } from '../app/services/profile.service'
 
 @NgModule({
   declarations: [
@@ -21,9 +23,10 @@ import { SearchComponent } from './search/search.component';
     AppRoutingModule,
     HttpClientModule,
     NgbModule, 
-  
+    FormsModule,
+
   ],
-  providers: [],
+  providers: [ProfileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

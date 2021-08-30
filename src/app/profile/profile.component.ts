@@ -8,23 +8,21 @@ import { User} from '../user/user';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css'],
 })
-export class ProfileComponent implements OnInit {
+export class UserComponent implements OnInit {
 
   user!:User;
-  repos: any;
-
-  constructor(public ProfileService:ProfileService){
-    
-  } 
-  getUser(username:string){
-    this.userService.getProfile(username).then((success)=>{
-     this.user = this.userService.user;
-    },
-    // (error)=>{
-    //   console.log(error)
-    // });
-
-    this.userService.getRepo(username).then((success)=>{
+  repos:any;
+  
+  constructor(public userService:ProfileService) {
+   }
+   searchUser(username:string){
+     this.userService.getProfile(username).then((success)=>{
+      this.user = this.userService.user;
+     },
+     (error)=>{
+       console.log(error)
+     });
+     this.userService.getRepo(username).then((success)=>{
       this.repos = this.userService.repos;
      },
      (error)=>{
@@ -33,7 +31,7 @@ export class ProfileComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.getUser('Grievi');
+    this.searchUser('Grievi');
   }
 
 }

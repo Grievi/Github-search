@@ -9,11 +9,11 @@ import { Class } from '../repoList/repolist';
 })
 export class ProfileService {
   user!:User;
-  repos!:Class;
+  repos!:Repo;
 
   constructor(private http:HttpClient) { 
     this.user = new User("",0,0,0,"","","");
-    this.repos = new Class("","","","",new Date());
+    this.repos = new Repo("","","","",new Date());
   }
 
   getProfile(username:string){
@@ -44,13 +44,15 @@ export class ProfileService {
       })
       return promise;
     }
+
     getRepo(username:string){
       interface ApiResponse{
         name:string;
         html_url:string;
         description:string;
         language:string;
-        created_at:Date 
+        created_at:Date
+        
       }
       let repoUrl = 'https://api.github.com/users/'+username+'/repos?order=created&sort=asc?client_id='+environment.clientId + '&client_secret='+environment.clientSecret;
       let promise = new Promise<void>((resolve,reject) =>{
@@ -61,7 +63,7 @@ export class ProfileService {
           resolve()
         },
         error=>{
-          this.repos.name = "No match found! Try Again"
+          this.repos.name = "Match not found, Please try again"
   
           reject(error)
           })

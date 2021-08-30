@@ -29,6 +29,12 @@ ul li a{
 .navlink >a{
     color: black;
 }
+.wrapper-1{
+    background: linear-gradient(#61606E,#1D212A) ;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
 footer{
     background:linear-gradient(#61606E,#1D212A) ;
     color: white;

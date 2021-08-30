@@ -9,11 +9,11 @@ import { Class } from '../repoList/repolist';
 })
 export class ProfileService {
   user!:User;
-  repos!:Repo;
+  repos!:Class;
 
   constructor(private http:HttpClient) { 
     this.user = new User("",0,0,0,"","","");
-    this.repos = new Repo("","","","",new Date());
+    this.repos = new Class("","","","",new Date());
   }
 
   getProfile(username:string){

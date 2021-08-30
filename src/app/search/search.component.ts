@@ -14,6 +14,8 @@ export class SearchComponent implements OnInit {
 
   getUser(){
     this.searchResult.emit(this.userQuery);
+    console.log(this.searchResult);
+    
   }
 
   ngOnInit(): void {

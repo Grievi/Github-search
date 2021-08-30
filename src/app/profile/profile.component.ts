@@ -15,7 +15,7 @@ export class ProfileComponent implements OnInit {
   
   constructor(public userService:ProfileService) {
    }
-   searchUser(username:string){
+   getUser(username:string){
      this.userService.getProfile(username).then((success)=>{
       this.user = this.userService.user;
      },
@@ -31,7 +31,7 @@ export class ProfileComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.searchUser('Grievi');
+    this.getUser('Grievi');
   }
 
 }
